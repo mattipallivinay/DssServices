@@ -1,24 +1,20 @@
+import React from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-import Splash from "../pages/splash";
-import Login from "../pages/login";
-import Home from "../pages/home";
-import Services from "../pages/services";
+import Home from "../pages/home"; 
 import Collab from "../pages/collab";
+import Services from "../pages/services";
 import Help from "../pages/help";
 
 function AppRoutes() {
   return (
     <Router>
       <Routes>
-        <Route path="/" element={<Splash />} />
-        <Route path="/login" element={<Login />} />
-        <Route path="/home" element={<Home />} />
-        <Route path="/services" element={<Services />} />
+        <Route path="/" element={<Home />} />
         <Route path="/collab" element={<Collab />} />
+        <Route path="/services" element={<Services />} />
         <Route path="/help" element={<Help />} />
       </Routes>
     </Router>
   );
 }
-
 export default AppRoutes;
