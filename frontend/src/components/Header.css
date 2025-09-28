@@ -1,0 +1,43 @@
+/* Header.css */
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  position: relative;
+  padding: 12px 16px;
+  background-color: black;
+  color: #FFD700;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
+}
+
+/* Logo at left */
+.logo-container {
+  flex: 1;
+}
+
+.logo {
+  width: 40px;
+  height: 40px;
+}
+
+/* Company name centered */
+.company-name {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 1.25rem;
+  font-weight: bold;
+  letter-spacing: 0.05em;
+  text-align: center;
+}
+
+/* Menu at right */
+.menu-button {
+  flex: 1;
+  display: flex;
+  justify-content: flex-end;
+  background: none;
+  border: none;
+  color: #FFD700;
+  cursor: pointer;
+}
