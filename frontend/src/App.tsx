@@ -1,7 +1,13 @@
-import AppRoutes from "./routes/AppRoutes";
+import Home from "./pages/home";
+import BottomNav from "./components/BottomNav";
 
 function App() {
-  return <AppRoutes />;
+  return (
+    <div className="relative min-h-screen">
+      <Home />
+      <BottomNav />
+    </div>
+  );
 }
 
 export default App;

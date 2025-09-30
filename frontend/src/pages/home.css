@@ -1,84 +1,97 @@
-/* Reset default body styles */
-body, html {
+/* core reset & ensure root uses full width */
+html, body, #root {
+  height: 100%;
+  width: 100%;
   margin: 0;
   padding: 0;
-  width: 100%;
+  box-sizing: border-box;
+
+  /* background image setup */
+  background: url("https://static.vecteezy.com/system/resources/previews/002/196/508/original/luxury-black-and-gold-background-free-vector.jpg") no-repeat center center fixed;
+  background-size: cover;
 }
 
-/* Main Container */
+/* container that wraps page */
+/* container that wraps page */
 .home-container {
   display: flex;
   flex-direction: column;
   min-height: 100vh;
-  width: 100%; /* Full width */
-  background: black;
+  width: 100%;
   color: white;
-  box-sizing: border-box; /* Include padding in width */
+  background: transparent;
+  padding-bottom: 80px; /* reserve space for BottomNav */
 }
 
-/* Content Section */
+
+/* main content */
 .content {
-  flex: 1;
-  padding: 2rem;
-  text-align: center;
-  width: 100%; /* Ensure full width */
+  flex: 1 1 auto;
+  width: 100%;
+  padding: 28px;
   box-sizing: border-box;
+  overflow-x: hidden;
+
+  /* reserve space so footer is visible above nav */
+  padding-bottom: 120px; /* adjust height depending on BottomNav size */
 }
+
 
 /* Title */
+/* Japanese style font for titles */
 .title {
-  font-size: 2.5rem;
-  font-weight: bold;
-  color: gold;
-  margin-bottom: 2rem;
-  font-family: 'Arial Black', Arial, sans-serif;
+  text-align: center;
+  font-family: 'Noto Serif JP', serif; /* or 'Sawarabi Mincho' */
+  font-size: 34px;
+  font-weight: 800;
+  color: #E6C200; /* luxury gold */
+  margin: 10px 0 28px 0;
+  text-shadow: 1px 1px 2px rgba(0,0,0,0.4);
 }
 
-/* Services Grid */
+
+/* responsive grid */
 .services-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  gap: 1.5rem;
-  width: 100%; /* Full width of container */
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 20px;
+  max-width: 1200px;
   margin: 0 auto;
-  padding: 0 1rem; /* optional: some horizontal padding */
-  box-sizing: border-box;
 }
 
-/* Individual Service Card */
+/* card */
 .service-card {
   position: relative;
-  overflow: hidden;
   border-radius: 12px;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.6);
+  overflow: hidden;
+  background: rgba(0,0,0,0.65);
+  box-shadow: 0 6px 18px rgba(0,0,0,0.6);
   cursor: pointer;
-  transition: transform 0.3s ease;
+  backdrop-filter: blur(6px);
 }
-
-.service-card:hover {
-  transform: scale(1.05);
-}
-
-/* Card Image */
 .service-card img {
   width: 100%;
   height: 200px;
   object-fit: cover;
-  transition: transform 0.4s ease;
+  transition: transform .4s ease;
 }
-
-.service-card:hover img {
-  transform: scale(1.1);
-}
-
-/* Card Title */
+.service-card:hover img { transform: scale(1.05); }
 .service-card h3 {
   position: absolute;
-  bottom: 10px;
+  bottom: 12px;
   left: 50%;
   transform: translateX(-50%);
   color: gold;
-  font-size: 1.2rem;
-  font-weight: bold;
-  text-shadow: 1px 1px 3px black;
+  font-weight: 700;
+  text-shadow: 1px 1px 5px rgba(0,0,0,0.7);
+}
+
+/* Footer */
+.footer {
+  background: rgba(0,0,0,0.7);
+  padding: 18px;
+  text-align: center;
+  color: #f1f1f1;
+  border-top: 1px solid rgba(255,255,255,0.15);
+  backdrop-filter: blur(4px);
 }
